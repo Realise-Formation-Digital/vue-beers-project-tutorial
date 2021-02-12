@@ -64,31 +64,31 @@
 
     <!-- dialog description -->
     <v-dialog
-    v-model="beerDescriptionDialog"
-    width="500"
+        v-model="beerDescriptionDialog"
+        width="500"
     >
-    <v-card>
-      <v-card-title class="headline grey lighten-2">
-        {{ selectedBeer ? selectedBeer.name : ''}}
-      </v-card-title>
+      <v-card>
+        <v-card-title class="headline grey lighten-2">
+          {{ selectedBeer ? selectedBeer.name : '' }}
+        </v-card-title>
 
-      <v-card-text>
-        {{ selectedBeer ? selectedBeer.description : ''}}
-      </v-card-text>
+        <v-card-text>
+          {{ selectedBeer ? selectedBeer.description : '' }}
+        </v-card-text>
 
-      <v-divider></v-divider>
+        <v-divider></v-divider>
 
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn
-            color="primary"
-            text
-            @click="hideDescription()"
-        >
-          Thank you!
-        </v-btn>
-      </v-card-actions>
-    </v-card>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+              color="primary"
+              text
+              @click="hideDescription()"
+          >
+            Thank you!
+          </v-btn>
+        </v-card-actions>
+      </v-card>
     </v-dialog>
   </div>
 </template>
