@@ -9,55 +9,13 @@
     </v-row>
     <v-row>
       <v-col v-for="(beer, index) in beersFetched" cols="3" :key="index">
-        <v-card
-            class="mx-auto my-12"
-            max-width="374"
-            hover
-        >
-          <v-img
-              height="250"
-              :src="beer.image_url"
-          ></v-img>
-
-          <v-card-title>{{ beer.name }}</v-card-title>
-
-          <v-card-text>
-            <v-row
-                align="center"
-                class="mx-0"
-            >
-              <v-rating
-                  :value="beer.abv"
-                  color="amber"
-                  dense
-                  half-increments
-                  readonly
-                  size="14"
-              ></v-rating>
-
-              <div class="grey--text ml-4">
-                {{ beer.abv }}
-              </div>
-            </v-row>
-
-          </v-card-text>
-
-          <v-divider class="mx-4"></v-divider>
-
-          <v-card-text>
-            {{ beer.tagline }}
-          </v-card-text>
-
-          <v-card-actions>
-            <v-btn
-                color="deep-purple lighten-2"
-                text
-                @click="selectBeer(beer)"
-            >
-              Show description
-            </v-btn>
-          </v-card-actions>
-        </v-card>
+        <!-- loop -->
+        <BeerCard
+          :beer-name="beer.name"
+          :image="beer.image_url"
+          :abv="beer.abv"
+          :tagline="beer.tagline"
+        />
       </v-col>
     </v-row>
 
@@ -95,9 +53,10 @@
 
 <script>
 import Axios from "@/lib/axios";
-
+import BeerCard from "@/components/pages/listBeers/BeerCard";
 export default {
   name: "gridListBeers",
+  components: {BeerCard},
   data() {
     return {
       isSearchingBeers: false,
